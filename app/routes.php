@@ -11,29 +11,32 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/blog', 'HomeController@showBlog');
 
-Route::get('/sayhello/{name}', function($name)
-{
-    if ($name == "Chris")
-    {
-        return Redirect::to('/');
-    }
-    else
-    {
-        return "Hello, $name!";
-    }
-});
+Route::get('/resume', 'HomeController@showResume');
 
-Route::get('/resume', function()
-{
-	return "This is my resume.";
-});
+Route::get('/portfolio', 'HomeController@showPortfolio');
 
-Route::get('/portfolio', function()
-{
-	return "This is my portfolio.";
-});
+Route::get('/', 'HomeController@showWelcome');
+
+Route::get('/sayhello/{name}', 'HomeController@sayHello');
+
+Route::resource('posts', 'PostsController');
+
+// Route::get('/rolldice/{guess}', function($guess)
+// {
+//    $random = rand(1, 6);
+   
+//    if ($random == $guess) {
+//    		$message = "Good Guess!";	
+//    } else {
+//    		$message = "You Lose!";
+//    }
+   
+//    $data = array('guess' => $guess, 'random' => $random, 'message' => $message);
+   
+//    return View::make('roll-dice')->with($data);
+// });
+
+
+
