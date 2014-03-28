@@ -36,7 +36,17 @@ h1,h2,h3,h4,h5,h6{
     font-weight: 700;
 }
 
+.resume-header {
+  padding-left: 80px;
+}
 
+.work-dates {
+  padding-top: 150px;
+}
+
+.ed-dates {
+  padding-top: 30px;
+}
 
 /* ==========================================================================
    Navigation
@@ -176,6 +186,10 @@ background-color: transparent;
 
 }
 
+#create-header {
+  color: #FFF;
+}
+
 #page-contact{
     padding: 75px 0;
 }
@@ -198,6 +212,9 @@ background-color: transparent;
   margin-top: 10px;
 }
 
+#footer {
+  
+}
 
 /* ==========================================================================
    Portfolio   

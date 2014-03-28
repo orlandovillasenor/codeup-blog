@@ -1,14 +1,14 @@
 @extends('layouts.master')
 
         
-
+@section('content')
 <!-- Begin page content -->
     <div class="container">
       <div class="page-header">
         <h1>Orlando Villaseñor <small>Junior Software Developer</small></h1>
       </div>
         <div class="row">
-          <div class="col-md-3" > 
+          <div class="col-md-3 section-header" > 
             <p class="text-left" id="left-menu"><strong>CONTACT</strong></p>
           </div>
           <div class="col-md-7">
@@ -24,7 +24,7 @@
         </div>
         <hr>
         <div class="row">
-          <div class="col-md-3"> 
+          <div class="col-md-3 section-header"> 
             <p class="text-left"><strong>WORK EXPERIENCE</strong></p>
           </div>
           <div class="col-md-7">
@@ -49,7 +49,7 @@
         </div>
         <hr>
         <div class="row">
-          <div class="col-md-3"> 
+          <div class="col-md-3 section-header"> 
             <p class="text-left"><strong>EDUCATION</strong></p>
           </div>
           <div class="col-md-7">
@@ -78,9 +78,10 @@
           </div>
         </div> 
     
-    <hr class="featurette-divider">
-    <footer>
+    <!-- <hr class="featurette-divider"> -->
+    <!-- <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>© 2014 Orlando Villaseñor</p>
-    </footer>
+    </footer> -->
     </div>
+@stop
