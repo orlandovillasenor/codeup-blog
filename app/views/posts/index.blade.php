@@ -15,16 +15,16 @@
 		                <p>
 		                    <span class="glyphicon glyphicon-time"></span> {{{ $post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i A') }}}</p>
 		                <hr>
-		                <img src="http://placehold.it/900x300" class="img-responsive">
-		                <hr>
-		                <p>{{{ $post->body }}}</p>
+		                <!-- <img src="http://placehold.it/900x300" class="img-responsive">
+		                <hr> -->
+		                <p>{{{ Str::words ($post->body, 75) }}}</p>
 		                <a class="btn btn-primary" href=" {{{ action('PostsController@show', $post->id)}}} ">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
 		                <hr>
 	                @endforeach
 					
 	                <a href="{{{ action('PostsController@create') }}}">Create New Post</a>
-					{{ $posts->links() }}
+					<div class='pull-right'>{{ $posts->links() }}</div>
 	                
 	                <!-- pager -->
 	                <!-- <ul class="pager">

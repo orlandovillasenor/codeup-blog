@@ -2,6 +2,15 @@
 
 class PostsController extends \BaseController {
 
+	public function __construct()
+	{
+		// Include parent constructor
+		parent::__construct();
+
+		// Run an auth filter before all methods except index and show
+		$this->beforeFilter('auth.basic', array('except' => array('index', 'show')));
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,7 +18,7 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$posts = Post::paginate(2);
+		$posts = Post::orderBy('created_at', 'desc')->paginate(2);
 		return View::make('posts.index')->with('posts', $posts);
 	}
 
@@ -38,6 +47,7 @@ class PostsController extends \BaseController {
 	    // attempt validation
 	    if ($validator->fails())
 		    {
+		        Session::flash('errorMessage', 'Post was not created - see form errors');
 		        // validation failed, redirect to the post create page with validation errors and old inputs
 		        return Redirect::back()->withInput()->withErrors($validator);
 		    }
@@ -48,6 +58,7 @@ class PostsController extends \BaseController {
 				$post->title = Input::get('title');
 				$post->body = Input::get('body');
 				$post->save();
+				Session::flash('successMessage', 'Post Created Successfully');
 				return Redirect::action('PostsController@index');
 		    }		
 	}
@@ -92,6 +103,7 @@ class PostsController extends \BaseController {
 	    // attempt validation
 	    if ($validator->fails())
 		    {
+		        Session::flash('errorMessage', 'Post was not updated - see form errors');
 		        // validation failed, redirect to the post create page with validation errors and old inputs
 		        return Redirect::back()->withInput()->withErrors($validator);
 		    }
@@ -101,6 +113,7 @@ class PostsController extends \BaseController {
 				$post->title = Input::get('title');
 				$post->body = Input::get('body');
 				$post->save();
+				Session::flash('successMessage', 'Post Updated Successfully');
 				return Redirect::action('PostsController@index');
 		    }
 	}
@@ -114,7 +127,10 @@ class PostsController extends \BaseController {
 	public function destroy($id)
 	{
 		Post::findOrFail($id)->delete();
-		return Redirect::action('PostsController@index');
+		if (findOrFail($id)->delete()) {
+			Session::flash('successMessage', 'Post Deleted Successfully');
+			return Redirect::action('PostsController@index');			
+		}
 	}
 
 }

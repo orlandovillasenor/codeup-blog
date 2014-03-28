@@ -36,8 +36,8 @@
 		                <p>
 		                    <span class="glyphicon glyphicon-time"></span> {{{ $posts->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i A') }}}</p>
 		                <hr>
-		                <img src="http://placehold.it/900x300" class="img-responsive">
-		                <hr>
+		                <!-- <img src="http://placehold.it/900x300" class="img-responsive">
+		                <hr> -->
 		                <p>{{{ $posts->body }}}</p>
 		                <a class="btn btn-primary" href=" {{{ action('PostsController@index')}}} ">All Posts <span class="glyphicon glyphicon-chevron-right"></span></a>
 
@@ -50,12 +50,11 @@
 	                
 	                <!-- pager -->
 	                <ul class="pager">
-	                    <li class="previous"><a href="#">&larr; Previous</a>
+	                    <li class="previous"><a href="{{{ action('PostsController@show', $posts->id - 1) }}}">&larr; Previous</a>
 	                    </li>
-	                    <li class="next"><a href="#">Next &rarr;</a>
+	                    <li class="next"><a href="{{{ action('PostsController@show', $posts->id + 1) }}}">Next &rarr;</a>
 	                    </li>
 	                </ul>
-
 	            </div>
 
 	            <div class="col-lg-4">
@@ -139,7 +138,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+   
     <script src="/js/jquery-1.10.2.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/jquery.scrollTo.js"></script>
