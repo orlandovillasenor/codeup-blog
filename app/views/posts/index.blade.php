@@ -4,12 +4,18 @@
 	<div class="container">
 
 	        <div class="row">
+	        	<header class="section-header">
+			            <h2 class="section-title"><span>Blog</span></h2>
+			              <div class="spacer"></div>
+			            <p class="section-subtitle"></p>
+			        </header>
 	            <div class="col-lg-8">
+	            	
 	                @foreach($posts as $post)
 		                <!-- blog entry -->
 		                <h1><a href="{{{ action('PostsController@show', $post->id)}}}">{{{ $post->title }}}</a>
 		                </h1>
-		                <p class="lead">by <a href="#">Orlando Villaseñor</a>
+		                <p class="lead">by &nbsp<a id="author" href="#">Orlando Villaseñor</a>
 		                </p>
 		                <hr>
 		                <p>
@@ -17,14 +23,16 @@
 		                <hr>
 		                <!-- <img src="http://placehold.it/900x300" class="img-responsive">
 		                <hr> -->
-		                <p>{{{ Str::words ($post->body, 75) }}}</p>
-		                <a class="btn btn-primary" href=" {{{ action('PostsController@show', $post->id)}}} ">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+		                <div class="well">
+		                	<p id="blog-body">{{{ Str::words ($post->body, 75) }}}</p>
+		            	</div>
+		                <a class="btn btn-default" href=" {{{ action('PostsController@show', $post->id)}}} ">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
 		                <hr>
 	                @endforeach
 					
-	                <a href="{{{ action('PostsController@create') }}}">Create New Post</a>
 					<div class='pull-right'>{{ $posts->links() }}</div>
+	                <a class="btn btn-default" href="{{{ action('PostsController@create') }}}">Create New Post</a>
 	                
 	                <!-- pager -->
 	                <!-- <ul class="pager">
@@ -36,13 +44,13 @@
 
 	            </div>
 				
-	            <div class="col-lg-4">
-	                <div class="well">
+	            <div id="right-sidebar" class="col-lg-4">
+	                <div class="well well-dark">
 	                    <h4>Blog Search</h4>
 	                    <div class="input-group">
 	                        <input type="text" class="form-control">
 	                        <span class="input-group-btn">
-	                            <button class="btn btn-default" type="button">
+	                            <button class="btn search" type="button">
 	                                <span class="glyphicon glyphicon-search"></span>
 	                            </button>
 	                        </span>
@@ -50,7 +58,7 @@
 	                    <!-- /input-group -->
 	                </div>
 	                <!-- /well -->
-	                <div class="well">
+	                <div class="well well-dark">
 	                    <h4>Popular Blog Categories</h4>
 	                    <div class="row">
 	                        <div class="col-lg-6">
@@ -80,7 +88,7 @@
 	                    </div>
 	                </div>
 	                <!-- /well -->
-	                <div class="well">
+	                <div class="well well-dark">
 	                    <h4>Side Widget Well</h4>
 	                    <p>Bootstrap's default wells work great for side widgets! What is a widget anyways...?</p>
 	                </div>

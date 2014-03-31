@@ -126,8 +126,8 @@ class PostsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		Post::findOrFail($id)->delete();
-		if (findOrFail($id)->delete()) {
+		Post::find($id)->delete();
+		if (find($id)->delete()) {
 			Session::flash('successMessage', 'Post Deleted Successfully');
 			return Redirect::action('PostsController@index');			
 		}

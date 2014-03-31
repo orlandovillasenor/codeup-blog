@@ -1,69 +1,78 @@
 @extends('layouts.master')
 
-@section('topscripts')
-	<!-- Bootstrap core CSS -->
-	{{ HTML::style('/css/bootstrap.min.css') }}
-    <!-- Custom styles for this template -->
-    {{ HTML::style('/css/blog-home.css') }}
-    <!-- Fonts from Font Awsome -->
-    <link rel="stylesheet" href="/css/font-awesome.min.css">
-     <!-- Magnific popup -->
-    <link rel="stylesheet" href="/css/magnific-popup.css">
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="/css/main.css">
-
-    <!-- Color styles -->
-    <!-- <link rel="stylesheet" href="css/colors/blue.css"> -->
-   	<!-- <link rel="stylesheet" href="css/colors/yellow.css">-->
-    <link rel="stylesheet" href="/css/colors/red.css">
-   	<!--  <link rel="stylesheet" href="css/colors/purple.css">-->
-   	<!--  <link rel="stylesheet" href="css/colors/orange.css">-->
-   	<!--  <link rel="stylesheet" href="css/colors/green.css">-->
-@stop
-
 
 @section('content')
 	<div class="container">
 
 	        <div class="row">
 	            <div class="col-lg-8">
-		                <!-- blog entry -->
-		                <h1><a href="#">{{{ $posts->title }}}</a>
-		                </h1>
-		                <p class="lead">by <a href="#">Orlando Villaseñor</a>
-		                </p>
-		                <hr>
-		                <p>
-		                    <span class="glyphicon glyphicon-time"></span> {{{ $posts->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i A') }}}</p>
-		                <hr>
-		                <!-- <img src="http://placehold.it/900x300" class="img-responsive">
-		                <hr> -->
-		                <p>{{{ $posts->body }}}</p>
-		                <a class="btn btn-primary" href=" {{{ action('PostsController@index')}}} ">All Posts <span class="glyphicon glyphicon-chevron-right"></span></a>
+	                <!-- blog entry -->
+	                <h1><a href="#">{{{ $posts->title }}}</a>
+	                </h1>
+	                <p class="lead">by <a href="#">Orlando Villaseñor</a>
+	                </p>
+	                <hr>
+	                <p>
+	                    <span class="glyphicon glyphicon-time"></span> {{{ $posts->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i A') }}}</p>
+	                <hr>
+	                <!-- <img src="http://placehold.it/900x300" class="img-responsive">
+	                <hr> -->
+	                <div class="well">
+	                	<p id="blog-body">{{{ $posts->body }}}</p>
+	                </div>
+	               	<button href="#" id="btnDeletePost" class="btn btn-default">Delete</button>&nbsp &nbsp
+					<a class="btn btn-default" href=" {{{ action('PostsController@edit', $posts->id)}}} ">Edit </a>&nbsp &nbsp
+	                <a class="btn btn-default" href=" {{{ action('PostsController@index')}}} ">All Posts <span class="glyphicon glyphicon-chevron-right"></span></a>
 
-		                <hr>
-	               	<a href="#" id="btnDeletePost">Delete</a>
-					<a href="{{{ action('PostsController@edit', $posts->id) }}}" class="btn">Edit</a>
-					<!-- Hidden form for Delet Post -->
+	                <!-- <hr> -->
+
+					<!-- Hidden form for Delete Post -->
 					{{ Form::open(array('action' => array('PostsController@destroy', $posts->id), 'method' => 'delete', 'id' => 'formDeletePost')) }}
 					{{ Form::close() }}
+
+					<hr>
+
+	                <!-- the comments -->
+	                <p><h5 class="commenter">WebKid 2000</h5>
+	                    <span class="glyphicon glyphicon-time"></span> {{{ $posts->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i A') }}}</p>
+	                
+	                <p>This has to be the worst blog post I have ever read. It simply makes no sense. You start off by talking about space or something, then you randomly start babbling about cupcakes, and you end off with random fish names.</p>
+					<hr>
+	                <p><h5 class="commenter">Max Dev</h5>
+	                    <span class="glyphicon glyphicon-time"></span> {{{ $posts->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i A') }}}</p>
+	                
+	                <p>Don't listen to this guy, any blog with the categories 'dinosaurs, spaceships, fried foods, wild animals, alien abductions, business casual, robots, and fireworks' has true potential.</p>
+
+	                <hr>
+
+	                <!-- the comment box -->
+	                <div class="well well-dark">
+	                    <h4>Leave a Comment:</h4>
+	                    <form role="form">
+	                        <div class="form-group">
+	                            <textarea class="form-control" rows="3"></textarea>
+	                        </div>
+	                        <button type="submit" class="btn btn-default">Submit</button>
+	                    </form>
+	                </div>
+	            </div>
 	                
 	                <!-- pager -->
-	                <ul class="pager">
+	                <!-- <ul class="pager">
 	                    <li class="previous"><a href="{{{ action('PostsController@show', $posts->id - 1) }}}">&larr; Previous</a>
 	                    </li>
 	                    <li class="next"><a href="{{{ action('PostsController@show', $posts->id + 1) }}}">Next &rarr;</a>
 	                    </li>
-	                </ul>
-	            </div>
+	                </ul> -->
+	            
 
-	            <div class="col-lg-4">
-	                <div class="well">
+	            <div id="right-sidebar" class="col-lg-4">
+	                <div class="well well-dark">
 	                    <h4>Blog Search</h4>
 	                    <div class="input-group">
 	                        <input type="text" class="form-control">
 	                        <span class="input-group-btn">
-	                            <button class="btn btn-default" type="button">
+	                            <button class="btn search" type="button">
 	                                <span class="glyphicon glyphicon-search"></span>
 	                            </button>
 	                        </span>
@@ -71,7 +80,7 @@
 	                    <!-- /input-group -->
 	                </div>
 	                <!-- /well -->
-	                <div class="well">
+	                <div class="well well-dark">
 	                    <h4>Popular Blog Categories</h4>
 	                    <div class="row">
 	                        <div class="col-lg-6">
@@ -101,7 +110,7 @@
 	                    </div>
 	                </div>
 	                <!-- /well -->
-	                <div class="well">
+	                <div class="well well-dark">
 	                    <h4>Side Widget Well</h4>
 	                    <p>Bootstrap's default wells work great for side widgets! What is a widget anyways...?</p>
 	                </div>
@@ -123,32 +132,8 @@
     <!-- /.container -->
 @stop
 
-@section('myJquery')
+@section('deleteScript')
 <script>
-	$('#btnDeletePost').click(function(e){
-		e.preventDefault();
-		if (confirm('Are you sure you want to delete this post?')) {
-			$('#formDeletePost').submit();
-		};
-	});
+	
 </script>
 @stop
-
-@section('bottomscripts')
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-   
-    <script src="/js/jquery-1.10.2.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.scrollTo.js"></script>
-    <script src="/js/jquery.nav.js"></script>
-    <script src="/js/jquery.sticky.js"></script>
-    <script src="/js/jquery.easypiechart.min.js"></script>
-    <script src="/js/jquery.vegas.min.js"></script>
-    <script src="/js/jquery.isotope.min.js"></script>
-    <script src="/js/jquery.magnific-popup.min.js"></script>
-    <script src="/js/jquery.validate.js"></script>
-    <script src="/js/waypoints.min.js"></script>
-    <script src="/js/main.js"></script>
- @stop

@@ -17,7 +17,7 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		return View::make('index');
+		return View::make('hello');
 	}
 
 	public function showResume()
@@ -28,6 +28,11 @@ class HomeController extends BaseController {
 	public function showPortfolio()
 	{
 		return View::make('portfolio');
+	}
+
+	public function showContact()
+	{
+		return View::make('contact');
 	}
 
 	public function showBlog()

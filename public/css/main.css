@@ -12,7 +12,83 @@ html, body {
     width: 100%;
     font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
     color:#757575;
+    margin-top: 50px; /* 100px is double the height of the navbar - I made it a big larger for some more space - keep it at 50px at least if you want to use the fixed top nav */ 
+    background-color: #282b30;
 }
+
+.lead {
+  color: #D3492C;
+}
+
+.portfolio-block {
+  margin-bottom: 30px;
+}
+
+#mail-to {
+  color: #D3492C;
+}
+
+#mail-to:hover {
+  color: #FFF;
+}
+
+a.modal-link:link, a.modal-link:visited {
+  color: #D3492C;
+}
+
+a.modal-link:hover {
+  color: #757575;
+}
+
+.img-responsive.img-portfolio {
+  border: 10px solid #FFF;
+}
+
+#resume-download.btn {
+  color: #FFF;
+}
+
+.btn.search {
+  color: #FFF;
+}
+
+.commenter {
+  color: #FFF;
+}
+
+#blog-body {
+  color: #000;
+}
+
+.resume-well {
+  color: #000;
+}
+
+.well-dark {
+  background-color: #1e2226;
+  /*border: 2px solid #D3492C;*/
+}
+
+#contact-info {
+  color: #FFF;
+}
+
+#resume-subtitle {
+  color: #D3492C;
+}
+
+#right-sidebar {
+  margin-top: 100px;
+}
+
+.page-header {
+  color: #FFF;
+  padding-bottom: 20px;
+}
+/*#form {
+  float: none;
+  margin: 0 auto;
+}*/
 
 img { 
     max-width: 100%;
@@ -20,6 +96,7 @@ img {
 
 a:link,a:visited {
     outline: 0;
+    color: #FFF;
 }
 
 a:hover,a:active {
@@ -36,6 +113,10 @@ h1,h2,h3,h4,h5,h6{
     font-weight: 700;
 }
 
+footer {
+  margin: 25px 0;
+}
+
 .resume-header {
   padding-left: 80px;
 }
@@ -46,6 +127,10 @@ h1,h2,h3,h4,h5,h6{
 
 .ed-dates {
   padding-top: 30px;
+}
+
+.section-header {
+  color: #FFF;
 }
 
 /* ==========================================================================
@@ -186,9 +271,9 @@ background-color: transparent;
 
 }
 
-#create-header {
+/*#create-header {
   color: #FFF;
-}
+}*/
 
 #page-contact{
     padding: 75px 0;
@@ -212,9 +297,7 @@ background-color: transparent;
   margin-top: 10px;
 }
 
-#footer {
-  
-}
+
 
 /* ==========================================================================
    Portfolio   
@@ -414,7 +497,7 @@ background-color: transparent;
     font-weight: 700;
     letter-spacing: 5px;
     text-align: center;
-    color: #555555;
+    color: #FFF;
     text-transform: uppercase;
     padding:20px 0;
 }
@@ -428,6 +511,8 @@ background-color: transparent;
 .section-subtitle {
     text-align: center;
     padding:30px 0;
+    color: #FFF;
+    font-weight: 200;
 }
 
 
@@ -444,7 +529,7 @@ background-color: transparent;
     margin: 40px auto 0;
     background:transparent;
     position: relative;
-    color: #fff;
+    color: #FFF;
     font-size: 1em;
     text-transform: uppercase;
     font-weight: 600;

@@ -1,17 +1,24 @@
 /* red - #e74c3c */
 
 
-a:link,a:visited,.navbar-default .navbar-nav>li>a:hover, 
+.navbar-default .navbar-nav>li>a:hover, 
 .navbar-default .navbar-nav>li>a:focus,a:hover,a:active,.navbar-default .navbar-nav>.active>a, 
 .navbar-default .navbar-nav>.active>a:hover, 
 .navbar-default .navbar-nav>.active>a:focus{
     color: #D3492C;
-	/*color:#e74c3c;*/
+    
+	
 }
 
 .spacer,.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus,#grid .mix .overlay {
 
 background: #D3492C;
+}
+
+.btn.btn-default:hover,
+.btn.btn-default:active, 
+.search.btn:hover {
+    color:#D3492C;
 }
 
 #page-contact{
@@ -27,8 +34,4 @@ background: #D3492C;
 	color:#fff;
 }
 
-.btn.btn-default:hover,
-.btn.btn-default:active{
-    color:#D3492C;
-}
 
