@@ -9,11 +9,11 @@
 	                <!-- blog entry -->
 	                <h1><a href="#">{{{ $posts->title }}}</a>
 	                </h1>
-	                <p class="lead">by <a href="#">Orlando Villaseñor</a>
+	                <p class="lead">by <a href="#">{{{ $posts->user->email }}}</a>
 	                </p>
 	                <hr>
 	                <p>
-	                    <span class="glyphicon glyphicon-time"></span> {{{ $posts->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i A') }}}</p>
+	                    <span class="glyphicon glyphicon-time"></span> {{{ $posts->created_at->format('l, F jS Y @ h:i A') }}}</p>
 	                <hr>
 	                <!-- <img src="http://placehold.it/900x300" class="img-responsive">
 	                <hr> -->
@@ -70,11 +70,13 @@
 	                <div class="well well-dark">
 	                    <h4>Blog Search</h4>
 	                    <div class="input-group">
-	                        <input type="text" class="form-control">
+	                    	{{ Form::open(array('action' => array('PostsController@index'), 'method' => 'get')) }}
+	                        {{ Form::text('search', null, array('class' => 'form-control'))}}
 	                        <span class="input-group-btn">
-	                            <button class="btn search" type="button">
+	                            <button class="btn search" type="submit">
 	                                <span class="glyphicon glyphicon-search"></span>
 	                            </button>
+	                        {{ Form::close() }}
 	                        </span>
 	                    </div>
 	                    <!-- /input-group -->

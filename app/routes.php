@@ -20,4 +20,10 @@ Route::get('/portfolio', 'HomeController@showPortfolio');
 
 Route::get('/contact', 'HomeController@showContact');
 
+Route::get('/login', 'HomeController@showLogin');
+
+Route::post('/login', 'HomeController@doLogin');
+
+Route::get('/logout', 'HomeController@logout');
+
 Route::resource('posts', 'PostsController');

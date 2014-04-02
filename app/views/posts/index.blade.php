@@ -15,11 +15,11 @@
 		                <!-- blog entry -->
 		                <h1><a href="{{{ action('PostsController@show', $post->id)}}}">{{{ $post->title }}}</a>
 		                </h1>
-		                <p class="lead">by &nbsp<a id="author" href="#">Orlando Villaseñor</a>
+		                <p class="lead">by &nbsp<a id="author" href="#">{{{ $post->user->email }}}</a>
 		                </p>
 		                <hr>
 		                <p>
-		                    <span class="glyphicon glyphicon-time"></span> {{{ $post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i A') }}}</p>
+		                    <span class="glyphicon glyphicon-time"></span> {{{ $post->created_at->format('l, F jS Y @ h:i A') }}}</p>
 		                <hr>
 		                <!-- <img src="http://placehold.it/900x300" class="img-responsive">
 		                <hr> -->
@@ -31,7 +31,7 @@
 		                <hr>
 	                @endforeach
 					
-					<div class='pull-right'>{{ $posts->links() }}</div>
+					<div class='pull-right'>{{ $posts->appends(array('search' => Input::get('search')))->links() }}</div>
 	                <a class="btn btn-default" href="{{{ action('PostsController@create') }}}">Create New Post</a>
 	                
 	                <!-- pager -->
@@ -47,12 +47,15 @@
 	            <div id="right-sidebar" class="col-lg-4">
 	                <div class="well well-dark">
 	                    <h4>Blog Search</h4>
-	                    <div class="input-group">
-	                        <input type="text" class="form-control">
+	                    <div class="form-group">
+	                    	{{ Form::open(array('action' => array('PostsController@index'), 'method' => 'get')) }}
+	                        {{ Form::text('search', null, array('class' => 'form-control'))}}
+
 	                        <span class="input-group-btn">
-	                            <button class="btn search" type="button">
+	                            <button class="btn search" type="submit">
 	                                <span class="glyphicon glyphicon-search"></span>
 	                            </button>
+	                        {{ Form::close() }}
 	                        </span>
 	                    </div>
 	                    <!-- /input-group -->

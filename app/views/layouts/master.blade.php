@@ -70,6 +70,13 @@
           <li><a href="#page-experience">Experience</a></li> -->
           <li><a href="{{{ action('HomeController@showPortfolio')}}}">Portfolio</a></li>
           <li><a href="{{{ action('HomeController@showContact')}}}">Contact</a></li>
+          
+          @if (Auth::check())
+          <li><a href="{{{ action('HomeController@logout')}}}">Logout ({{{ Auth::user()->email }}}) </a></li>  
+          @else 
+          <li><a href="{{{ action('HomeController@showLogin')}}}">Login</a></li>
+          @endif
+
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -113,7 +120,7 @@
 
 
 @section('bottomscripts')
-    <!-- Bootstrap core JavaScript
+    <!-- JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 
