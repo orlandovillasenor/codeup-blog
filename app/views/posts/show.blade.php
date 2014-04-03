@@ -7,16 +7,18 @@
 	        <div class="row">
 	            <div class="col-lg-8">
 	                <!-- blog entry -->
-	                <h1><a href="#">{{{ $posts->title }}}</a>
-	                </h1>
-	                <p class="lead">by <a href="#">{{{ $posts->user->email }}}</a>
+	                <h1><a href="#">{{{ $posts->title }}}</a></h1>	                
+	                <p class="lead">by <a href="#">{{{ $posts->user->username }}}</a>
 	                </p>
 	                <hr>
 	                <p>
 	                    <span class="glyphicon glyphicon-time"></span> {{{ $posts->created_at->format('l, F jS Y @ h:i A') }}}</p>
+	                
+	                @if ($posts->image_path)
+	                	<img src="../uploads/{{ $posts->image_path }}" alt="" class="img-responsive" id="post-photo">
+	                @endif
+	                
 	                <hr>
-	                <!-- <img src="http://placehold.it/900x300" class="img-responsive">
-	                <hr> -->
 	                <div class="well">
 	                	<p id="blog-body">{{{ $posts->body }}}</p>
 	                </div>

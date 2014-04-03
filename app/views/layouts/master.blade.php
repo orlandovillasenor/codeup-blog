@@ -128,7 +128,7 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/jquery.scrollTo.js"></script>
     <script src="/js/jquery.nav.js"></script>
-    
+    <script src="/js/jquery.tagsinput.js"></script>
     <script src="/js/jquery.easypiechart.min.js"></script>
     <script src="js/jquery.vegas.min.js"></script> 
     <script src="/js/jquery.isotope.min.js"></script>

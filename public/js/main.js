@@ -1,6 +1,14 @@
 
 $(document).ready(function(){
 
+$('#tags').tagsInput();
+
+// delete success message after 3 seconds
+    setTimeout(function() {
+        $('.alert-success').hide();
+        $('.alert-success').hide();
+    }, 3000);
+
 /* Delete post */
     $('#btnDeletePost').click(function(e){
         e.preventDefault();
@@ -142,6 +150,7 @@ $('.chart').waypoint(function() {
                 .closest('.control-group').removeClass('error').addClass('success');
         }
     }); 
+
 
 
 

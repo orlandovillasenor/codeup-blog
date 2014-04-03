@@ -20,6 +20,7 @@ class PostsController extends \BaseController {
 	{
 		$search = Input::get('search');
 		$query = Post::with('user')->orderBy('created_at', 'desc');
+		
 		if (is_null($search))
 		{
 			$posts = $query->paginate(3);
@@ -52,6 +53,18 @@ class PostsController extends \BaseController {
 
 		// create the validator
 	    $validator = Validator::make(Input::all(), Post::$rules);
+		$filename = null;
+
+		if (Input::hasFile('file'))
+		{
+			$file = Input::file('file');
+	 
+			$destinationPath = 'uploads';
+			$filename = $file->getClientOriginalName();
+			$extension = $file->getClientOriginalExtension(); 
+			$filename = str_random(12) . '.' . $extension;
+			$uploadSuccess = Input::file('file')->move($destinationPath, $filename);
+		}
 
 	    // attempt validation
 	    if ($validator->fails())
@@ -62,11 +75,13 @@ class PostsController extends \BaseController {
 		    }
 		    else
 		    {
+		    	
 		        // validation succeeded, create and save the post
 		        $post = new Post();
 		        $post->user_id = Auth::user()->id;		
 				$post->title = Input::get('title');
 				$post->body = Input::get('body');
+				$post->image_path = $filename;
 				$post->save();
 				Session::flash('successMessage', 'Post Created Successfully');
 				return Redirect::action('PostsController@index');
@@ -109,7 +124,19 @@ class PostsController extends \BaseController {
 		$post = Post::findOrFail($id);
 		// create the validator
 	    $validator = Validator::make(Input::all(), Post::$rules);
-
+	    $filename = null;
+	    
+	    if (Input::hasFile('file'))
+		{
+			$file = Input::file('file');
+	 
+			$destinationPath = 'uploads';
+			$filename = $file->getClientOriginalName();
+			$extension = $file->getClientOriginalExtension(); 
+			$filename = str_random(12) . '.' . $extension;
+			$uploadSuccess = Input::file('file')->move($destinationPath, $filename);
+		}
+	    
 	    // attempt validation
 	    if ($validator->fails())
 		    {
@@ -120,9 +147,10 @@ class PostsController extends \BaseController {
 		    else
 		    {
 		        // validation succeeded, create and save the post
-
+		    	$post->user_id = Auth::user()->id;
 				$post->title = Input::get('title');
 				$post->body = Input::get('body');
+				$post->image_path = $filename;
 				$post->save();
 				Session::flash('successMessage', 'Post Updated Successfully');
 				return Redirect::action('PostsController@index');
@@ -137,11 +165,13 @@ class PostsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		Post::find($id)->delete();
-		if (find($id)->delete()) {
-			Session::flash('successMessage', 'Post Deleted Successfully');
-			return Redirect::action('PostsController@index');			
-		}
+		$post = Post::findOrFail($id);
+		$image = DB::table('posts')->where('id', '$id')->pluck('image_path');
+		$post->delete();
+		File::delete($image);
+		Session::flash('successMessage', 'Post Deleted Successfully');
+		return Redirect::action('PostsController@index');
+		
 	}
 
 }

@@ -15,7 +15,7 @@
 		                <!-- blog entry -->
 		                <h1><a href="{{{ action('PostsController@show', $post->id)}}}">{{{ $post->title }}}</a>
 		                </h1>
-		                <p class="lead">by &nbsp<a id="author" href="#">{{{ $post->user->email }}}</a>
+		                <p class="lead">by &nbsp<a id="author" href="#">{{{ $post->user->username }}}</a>
 		                </p>
 		                <hr>
 		                <p>
