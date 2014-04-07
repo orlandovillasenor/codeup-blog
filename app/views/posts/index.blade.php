@@ -24,7 +24,7 @@
 		                <!-- <img src="http://placehold.it/900x300" class="img-responsive">
 		                <hr> -->
 		                <div class="well">
-		                	<p id="blog-body">{{{ Str::words ($post->body, 75) }}}</p>
+		                	<p id="blog-body">{{ Str::words(Markdown::parse($post->body, 75)) }}</p>
 		            	</div>
 		                <a class="btn btn-default" href=" {{{ action('PostsController@show', $post->id)}}} ">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 

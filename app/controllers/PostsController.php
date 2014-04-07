@@ -55,10 +55,10 @@ class PostsController extends \BaseController {
 	    $validator = Validator::make(Input::all(), Post::$rules);
 		$filename = null;
 
+		// check for file upload
 		if (Input::hasFile('file'))
 		{
-			$file = Input::file('file');
-	 
+			$file = Input::file('file');	 
 			$destinationPath = 'uploads';
 			$filename = $file->getClientOriginalName();
 			$extension = $file->getClientOriginalExtension(); 
@@ -98,6 +98,8 @@ class PostsController extends \BaseController {
 	{
 		
 		$post = Post::findOrFail($id);
+		$post->body = Markdown::parse($post->body);
+		Purifier::clean($post->body);
 		return View::make('posts.show')->with('posts', $post);
 	}
 
@@ -110,7 +112,15 @@ class PostsController extends \BaseController {
 	public function edit($id)
 	{
 		$post = Post::findOrFail($id);
-		return View::make('posts.edit')->with('post', $post);
+		if (Auth::user()->id != $post->user_id) 
+		{
+			Session::flash('errorMessage', 'You must be post creator to edit!');
+			return Redirect::action('PostsController@index');
+		}
+		else 
+		{
+			return View::make('posts.edit')->with('post', $post);
+		}
 	}
 
 	/**
@@ -126,6 +136,7 @@ class PostsController extends \BaseController {
 	    $validator = Validator::make(Input::all(), Post::$rules);
 	    $filename = null;
 	    
+	    // check for file upload
 	    if (Input::hasFile('file'))
 		{
 			$file = Input::file('file');
@@ -166,11 +177,20 @@ class PostsController extends \BaseController {
 	public function destroy($id)
 	{
 		$post = Post::findOrFail($id);
-		$image = DB::table('posts')->where('id', '$id')->pluck('image_path');
-		$post->delete();
-		File::delete($image);
-		Session::flash('successMessage', 'Post Deleted Successfully');
-		return Redirect::action('PostsController@index');
+		if (Auth::user()->id != $post->user_id) 
+		{
+			Session::flash('errorMessage', 'You must be post creator to delete post!');
+			return Redirect::action('PostsController@index');
+		}
+		else 
+		{
+			
+			$post->delete();
+			Session::flash('successMessage', 'Post Deleted Successfully');
+			return Redirect::action('PostsController@index');
+		}
+
+		
 		
 	}
 

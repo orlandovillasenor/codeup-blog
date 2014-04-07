@@ -6,10 +6,14 @@ $('#tags').tagsInput();
 // delete success message after 3 seconds
     setTimeout(function() {
         $('.alert-success').hide();
-        $('.alert-success').hide();
     }, 3000);
 
-/* Delete post */
+// delete error message after 3 seconds
+    setTimeout(function() {
+        $('.alert-danger').hide();
+    }, 3000);
+
+/* Delete post confirm*/
     $('#btnDeletePost').click(function(e){
         e.preventDefault();
         if (confirm('Are you sure you want to delete this post?')) {

@@ -118,7 +118,6 @@
     </footer>
 @show
 
-
 @section('bottomscripts')
     <!-- JavaScript
     ================================================== -->
@@ -135,6 +134,7 @@
     <script src="/js/jquery.magnific-popup.min.js"></script>
     <script src="/js/jquery.validate.js"></script>
     <script src="/js/waypoints.min.js"></script>
+    <script src="/js/Markdown.Editor.js"></script>
     <script src="/js/main.js"></script>
 @show  
     

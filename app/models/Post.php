@@ -17,6 +17,23 @@ class Post extends BaseModel {
 	    'body'       => 'required|max:10000'
 	);
 
-	
+	public function delete_img()
+	{
+		File::delete(public_path() . "/" / $this->image_path);
+		$this->image_path = null; 
+	}
+
+	public function renderBody($truncate = false)
+    {
+        // truncate the body if the option is passed
+        $body = $truncate ? substr($this->body, 0, self::PREVIEW_LENGTH) . '...' : $this->body;
+
+    // convert markdown to HTML
+        $dirtyHTML = Parsedown::instance()->parse($body);
+
+        // run result through HTMLPurifier
+        $purifier = App::make('purifier');
+    return $purifier->purify($dirtyHTML);
+    }
 
 }

@@ -19,6 +19,13 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password');
 
+	const ROLE_ADMIN = 1;
+	const ROLE_USER = 2;
+	// public static $ROLES = array(
+	// 	array('id' => 1, 'name' => 'Administrator'),
+	// 	array('id' => 2, 'name' => 'User'),
+	// );
+
 	// Relationship for user has many posts.
 	public function posts()
 	{
@@ -54,7 +61,7 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
 	{
 		return $this->email;
 	}
-
+ 
 	/* Mutator to set user email to lowercase
 	*/
 	public function setEmailAttribute($value)
@@ -62,7 +69,7 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
 	    $this->attributes['email'] = strtolower($value);
 	}
 
-	/* Mutator to set user email to lowercase
+	/* Mutator to set username to lowercase
 	*/
 	public function setUsernameAttribute($value)
 	{
