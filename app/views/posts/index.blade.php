@@ -5,9 +5,9 @@
 
 	        <div class="row">
 	        	<header class="section-header">
-			            <h2 class="section-title"><span>Blog</span></h2>
+			            <h2 class="section-title"><span>Orlando Villaseñor</span></h2>
 			              <div class="spacer"></div>
-			            <p class="section-subtitle"></p>
+			            <p class="section-subtitle">Web Dev &amp Small Business Blog</p>
 			        </header>
 	            <div class="col-lg-8">
 	            	
@@ -23,8 +23,8 @@
 		                <hr>
 		                <!-- <img src="http://placehold.it/900x300" class="img-responsive">
 		                <hr> -->
-		                <div class="well">
-		                	<p id="blog-body">{{ Str::words(Markdown::parse($post->body, 75)) }}</p>
+		                <div class="well well-light">
+		                	<p class="blog-body">{{ Str::words(Markdown::parse($post->body, 75)) }}</p>
 		            	</div>
 		                <a class="btn btn-default" href=" {{{ action('PostsController@show', $post->id)}}} ">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
@@ -48,20 +48,21 @@
 	                <div class="well well-dark">
 	                    <h4>Blog Search</h4>
 	                    <div class="form-group">
-	                    	{{ Form::open(array('action' => array('PostsController@index'), 'method' => 'get')) }}
+	                    	{{ Form::open(array('action' => 'PostsController@index')) }}
 	                        {{ Form::text('search', null, array('class' => 'form-control'))}}
 
-	                        <span class="input-group-btn">
-	                            <button class="btn search" type="submit">
+	                        <!-- <span class="input-group-btn"> -->
+	                        {{Form::submit('Submit', array('class' => 'btn btn-default search'))}}
+	                            <!-- <button class="btn search" type="submit">
 	                                <span class="glyphicon glyphicon-search"></span>
-	                            </button>
+	                            </button> -->
 	                        {{ Form::close() }}
-	                        </span>
+	                        <!-- </span> -->
 	                    </div>
 	                    <!-- /input-group -->
 	                </div>
 	                <!-- /well -->
-	                <div class="well well-dark">
+	                <!-- <div class="well well-dark">
 	                    <h4>Popular Blog Categories</h4>
 	                    <div class="row">
 	                        <div class="col-lg-6">
@@ -89,12 +90,15 @@
 	                            </ul>
 	                        </div>
 	                    </div>
-	                </div>
+	                </div> -->
+	                
 	                <!-- /well -->
-	                <div class="well well-dark">
-	                    <h4>Side Widget Well</h4>
-	                    <p>Bootstrap's default wells work great for side widgets! What is a widget anyways...?</p>
-	                </div>
+	                <!-- <div class="well well-dark"> -->
+	                <!-- Twitter API-->
+	                    <a class="twitter-timeline" href="https://twitter.com/ododoubleg" data-widget-id="459200226574622720">Tweets by @ododoubleg</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+	                <!-- </div> -->
 	                <!-- /well -->
 	            </div>
 	        </div>
@@ -111,5 +115,7 @@
 
 	    </div>
     <!-- /.container -->
+    <hr>
 @stop
+
 

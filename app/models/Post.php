@@ -14,7 +14,7 @@ class Post extends BaseModel {
     // Validation rules
     public static $rules = array(
 	    'title'      => 'required|max:100',
-	    'body'       => 'required|max:10000'
+	    'body'       => 'required|max:1000'
 	);
 
 	public function delete_img()

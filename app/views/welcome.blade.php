@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Orlando Villaseñor</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <!-- BOOTSTRAP CORE CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Fonts from Font Awsome -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+         <!-- Magnific popup -->
+        <link rel="stylesheet" href="css/magnific-popup.css">
+        <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="css/index.css">
+
+        <!-- Color styles -->
+        <!-- <link rel="stylesheet" href="css/colors/blue.css"> -->
+       <!-- <link rel="stylesheet" href="css/colors/yellow.css">-->
+        <link rel="stylesheet" href="css/colors/index-red.css">
+       <!--  <link rel="stylesheet" href="css/colors/purple.css">-->
+       <!--  <link rel="stylesheet" href="css/colors/orange.css">-->
+       <!--  <link rel="stylesheet" href="css/colors/green.css">-->
+        
+         <!-- Feature detection -->
+        <script src="js/modernizr-2.6.2.min.js"></script>
+        
+        <!-- FONTS -->
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="js/plugins/html5shiv.js"></script>
+          <script src="js/plugins/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+   
+  <!-- NAVBAR -->
+  <div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav" id="main-menu">
+          <li><a href="#page-welcome">Home</a></li>
+          <li><a href="#page-profile">Profile</a></li>
+          <li><a href="#page-resume">Resume</a></li>
+          <li><a href="#page-portfolio">Portfolio</a></li>
+          <li><a href="{{{ action('PostsController@index') }}}">Blog</a></li>
+          @if (Auth::check())
+          <li><a href="{{{ action('HomeController@logout') }}}">Logout ({{{ Auth::user()->email }}}) </a></li>  
+          @else 
+          <li><a href="{{{ action('HomeController@showLogin') }}}">Login</a></li>
+          @endif
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+    <!-- WELCOME -->
+    <section id="page-welcome" class="page-welcome">
+      <!-- <div>
+          <ul class="slider-controls">
+              <li><a id="vegas-next" class="next" href="#"></a></li>
+              <li><a id="vegas-prev" class="prev" href="#"></a></li>
+          </ul>
+        </div> -->
+        
+        <div class="container">
+            <div class="row">
+                <header class="centered">
+                    <h1>Orlando Villaseñor</h1>
+                    <p>WEB DEVELOPER</p>
+                </header>
+                <div class="social-icons">
+                        <a href="https://twitter.com/ododoubleg" target="_blank" class="btn btn-round btn-clear btn-twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/orlando.villasenor.7" target="_blank" class="btn btn-round btn-clear btn-facebook"><i class="fa fa-facebook"></i></a>
+                        <!-- <a href="https://www.dribbble.com/" class="btn btn-round btn-clear btn-dribbble"><i class="fa fa-dribbble"></i></a> -->
+                        <!-- <a href="https://www.instagram.com/" class="btn btn-round btn-clear btn-instagram"><i class="fa fa-instagram"></i></a> -->
+                        <a href="https://www.linkedin.com/in/orlandovillasenor" class="btn btn-round btn-clear btn-linkedin" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                         <!-- <a href="https://www.pinterest.com/" class="btn btn-round btn-clear btn-pinterest"><i class="fa fa-pinterest"></i></a> -->
+                        <!-- <a href="https://www.google.com/" class="btn btn-round btn-clear btn-google"><i class="fa fa-google-plus"></i></a> -->
+                        <a href="https://www.github.com/orlandovillasenor" class="btn btn-round btn-clear btn-github" target="_blank"><i class="fa fa-github"></i></a>
+                    
+                </div>
+                <a href="mailto:orlandovillasenor@me.com" class="btn btn-default hire-me">Email</a>
+            </div>
+        </div>
+      
+    </section><!-- welcome ends -->
+
+    <!-- PROFILE -->
+    <section id="page-profile" class="page-profile">
+      <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Profile</h2>
+                    <div class="spacer"></div>
+                    <p class="section-subtitle">Web Developer and Entrepreneur</p>
+                </header>
+            <div class="row">
+              <div class="col-md-3">
+                 <div class="profile"><img src="img/my-pic1.jpg" alt="profile"/></div> 
+              </div>
+               <div class="col-md-9">
+                <p>I am a full-stack Web Developer who is committed to providing quality software solutions for personal and business websites. I constantly challenge myself to learn and incorporate new technologies, libraries, APIs, and frameworks. Recently, I finished a 12 week programming bootcamp with a focus on the LAMP stack: Linux, Apache, MySQL, PHP, JavaScript, HTML and CSS. I have experience using different frameworks such as jQuery, Twitter Bootstrap, and Laravel (MVC) for PHP. My previous role as an operations manager for a successful startup included establishing the business as an LLC, as well as, having sole responsibility for all financials such as bookkeeping, payroll, taxes and accounting statements.</p>
+                <p>I am currently looking for Freelance, Full-time, or Start-up opportunities that involve creative web design and efficient programming focused on providing a pleasurable experience to the end user. I am able to work independently or as part of a team and consider myself to be an excellent problem solver. I am reliable, dedicated, and focused on achieving success within the programming industry.</p>
+              </div>
+            </div>
+      </div> 
+    </section><!-- profile ends -->
+    
+    <!-- RESUME -->
+   <section id="page-resume" class="page-skills">
+    
+<!-- Begin page content -->
+    <div class="container">
+      <!-- <a id="resume-download" class="btn pull-right"><span class="glyphicon glyphicon-cloud-download"> PDF</span></a> -->
+      <header class="section-header">
+                    <h2 class="section-title">Orlando Villaseñor</h2>
+                    <div class="spacer"></div>
+                    <p class="section-subtitle">Web Application Developer</p>
+                </header>
+      <!-- <div class="page-header">
+        <h1>Orlando Villaseñor <small id="resume-subtitle">Web Application Developer</small></h1>
+
+      </div> -->
+        <hr>
+        <div class="row">
+          <div class="col-md-3 section-header" > 
+            <p class="text-left" id="left-menu">CONTACT</p>
+          </div>
+          <div class="col-md-7">
+            <address>
+              <p class="text-left">Email: &nbsp 
+                <a href="mailto:orlandovillasenor@me.com">orlandovillasenor@me.com</a>
+              </p>
+              <p class="text-left">Phone: &nbsp
+                <i class="fa fa-phone" style="color: #FFF">&nbsp (210) 913-1556</i> 
+              </p>
+            </address>
+          </div>
+          <div class="col-md-2">
+            <p class="text-left"> <a href="http://linkedin.com/in/orlandovillasenor/" target="_blank"> <i class="fa fa-linkedin-square fa-lg"></i> Linkedin</a></p>
+            <p>
+              <a href="http://github.com/orlandovillasenor" target="_blank"> <i class="fa fa-github fa-lg"></i> GitHub</a> </p>
+          </div>
+        </div>
+        
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3 section-header"> 
+            <p class="text-left">SKILLS</p>
+          </div>
+            <div class="col-md-9">
+              <div class="well resume-well">
+                <ul>
+                  <li>Proficient with the LAMP stack: Linux, Apache, MySQL, PHP, JavaScript, HTML and CSS. </li>
+                  <li>Knowledge of different frameworks such as Laravel, jQuery, and Twitter Bootstrap.</li>
+                  <li>A former small business owner who understands the importance of exceptional customer service, creative marketing strategies, and efficient financial management in order to maintain a successful business.
+                  </li>
+                  <li>Experience as a business manager for a successful startup which included sole responsibility for all financials such as bookkeeping, payroll, taxes and accounting statements.</li>
+                </ul>
+              </div>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <div class="row">
+          <div class="col-md-3 section-header"> 
+            <p class="text-left">EXPERIENCE</p>
+          </div>
+            <div class="col-md-9">
+              <div class="well resume-well">
+                  <p><strong>Freelance Web Developer &nbsp | &nbsp Current</strong><br><em>Self Employed</em></p>
+                  <ul>
+                    <li>Design and build web applications that provide a great user experience using the LAMP stack: Linux, Apache, MySQL, PHP, Javascript, HTML5, and CSS3.</li>
+                    <li>Part of a team that created and built an online web application system for military dependent student-athletes who are stationed overseas. The application allows high school student athletes and college coaches to connect for recruiting purposes. The athletes create a profile on the site which allows them to input their stats along with highlight videos and photos. The application was built using the LAMP stack: PHP, Laravel, Javascript, jQuery, HTML5, CSS3, MySQL, Apache, Vagrant, and Github.</li>
+                    <li>Created a blog application that allows multiple users to sign in and start blogging within their own user accounts. Includes admin profile with the ability to create, update and remove user’s blog posts. The application was built using the LAMP stack: PHP, Laravel, Javascript, jQuery, HTML5, CSS3, MySQL, Apache, Vagrant, and Github.</li>
+                    <li>Created a web application that allows users to create a to-do list with the ability to add and delete items from the database. The application was built using the LAMP stack: PHP, Javascript, jQuery, HTML5, CSS3, MySQL, Apache, and Vagrant.</li>
+                    
+                  </ul>
+                  <p><strong>Everlong Recording Company &nbsp | &nbsp 2000 - Present</strong><br><em>Owner - Recording/Mix Engineer</em></p>
+                  <ul>
+                    <li>Established independent music recording business as a freelance recording engineer and progressed business to a commercial recording studio and independent record label. </li>
+                    <li>Handled all aspects of the business as a sole proprietor including all marketing, bookings, accounting, and hiring.</li>
+                    <li>Mentored many young aspiring audio engineers through internships and employment for recording studio.
+                    </li>
+                  </ul>
+                  <p><strong>GMR Painting, LLC &nbsp | &nbsp 2003 - 2008</strong><br><em>Operations Manager</em></p>
+                  <ul>
+                    <li>Established and managed all business aspects for a start-up painting contractor business.</li>
+                    <li>Developed and executed marketing plans for new business development.</li>
+                    <li>Responsible for all financials and accounting including bookkeeping, payroll, and taxes.</li>
+                  </ul>
+                </div>
+              </div>
+          <!-- <div class="col-md-2">
+            <p class="text-left">May 2000 - Present</p>
+            <p class="work-dates">Jan 2003 - 2008</p>
+          </div> -->
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-3 section-header"> 
+            <p class="text-left">EDUCATION</p>
+          </div>
+          <div class="col-md-9">
+            <div class="well resume-well">
+              <address>
+                <strong>Codeup &nbsp | &nbsp 2014</strong><br>
+                LAMP+JavaScript 12 week Software Development Bootcamp<br>
+                San Antonio, TX<br>
+              </address>
+              <address>
+                <strong>University of Texas at Austin &nbsp | &nbsp 1997 - 2000</strong><br>
+                Economics<br>
+                Austin, TX<br>
+              </address>
+              <address>
+                <strong>Austin Community College &nbsp | &nbsp 2000 - 2001</strong><br>
+                Commercial Music Management<br>
+                Austin, TX<br>
+              </address>
+            </div>
+          </div>
+          <!-- <div class="col-md-2">
+            <a href="http://codeup.com" target="_blank"><p class="text-left"><button type="button" class="btn btn-success">In Progress</button></a><br>
+              Spring 2014</p>
+
+            <p class="ed-dates" >1997 - 2000</p>
+            <p class="ed-dates" >2000 - 2001</p>
+          </div> -->
+        </div> 
+    
+    <!-- <hr class="featurette-divider"> -->
+    <!-- <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>© 2014 Orlando Villaseñor</p>
+    </footer> -->
+    </div>
+
+    </section><!-- skills ends -->
+    
+    <!-- PORTFOLIO -->
+     <section id="page-portfolio" class="page-portfolio">
+          <div class="container">
+            <div class="row">
+                <header class="section-header">
+                    <h2 class="section-title"><span>Portfolio</span></h2>
+                      <div class="spacer"></div>
+                    <p class="section-subtitle">Web Development and Coding Portfolio</p>
+                </header>
+            
+          
+      
+        <!-- PORTFOLIO IMAGE 1 -->
+        <div class="col-md-4 ">
+            <div class="grid mask">
+            <figure>
+              <img class="img-responsive" src="img/todo-shot2.png" alt="">
+              <figcaption>
+                <h5>Web Application and Design - PHP &amp MySQL</h5>
+                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg btn-portfolio">Take a Look</a>
+              </figcaption><!-- /figcaption -->
+            </figure><!-- /figure -->
+            </div><!-- /grid-mask -->
+        </div><!-- /col -->
+        
+        
+             <!-- MODAL SHOW THE PORTFOLIO IMAGE. In this demo, all links point to this modal. You should create
+                  a modal for each of your projects. -->
+                  
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      <h4 class="modal-title">Go List Pro</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p><img class="img-responsive" src="img/todo-shot2.png" alt=""></p>
+                      <p>This project is a basic to do list web application using PHP and MySQL. &nbsp All the data is stored in a MySQL database.&nbsp Currently Working on multiple users with multiple lists.&nbsp Stay Tuned!</p>
+                      <!-- <p><b><a href="http://codeup.dev/landing-page/todo.php#">Visit Site</a></b></p> -->
+                    </div>
+                    <!-- <div class="modal-footer">
+                      <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Close</button>
+                    </div> -->
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+        
+        <!-- PORTFOLIO IMAGE 2 -->
+        <div class="col-md-4 portfolio-block">
+            <div class="grid mask">
+              <figure>
+                <img class="img-responsive img-portfolio" src="img/main-page.png" alt="">
+                <figcaption>
+                  <h5>Web Application and Design - PHP (Laravel) &amp MySQL</h5>
+                  <a data-toggle="modal" href="#myModal2" class="btn btn-primary btn-lg btn-portfolio">Take a Look</a>
+                </figcaption><!-- /figcaption -->
+              </figure><!-- /figure -->
+            </div><!-- /grid-mask -->
+        </div><!-- /col -->
+        
+        
+             <!-- MODAL SHOW THE PORTFOLIO IMAGE. In this demo, all links point to this modal. You should create
+                  a modal for each of your projects. -->
+                  
+              <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      <h4 class="modal-title">M.B. Athletes</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p><img class="img-responsive" src="img/main-page.png" alt=""></p>
+                      <p>M.B. Athletes is an online web application system for military dependent student-athletes who are stationed overseas.&nbsp The application allows high school student athletes and college coaches to connect for recruiting purposes.&nbsp The athletes create a profile on the site which allows them to input their stats along with highlight videos and photos.&nbsp The application was built using the LAMP stack: PHP, Laravel, Javascript, jQuery, HTML5, CSS3, MySQL, Apache, Vagrant, and Github. </p>
+                      <p><b><a class="modal-link" href="http://mbathletes.com" target="_blank">Visit Site</a></b></p>
+                    </div>
+                    <!-- <div class="modal-footer">
+                      <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Close</button>
+                    </div> -->
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+        
+        <!-- PORTFOLIO IMAGE 3 -->
+        <div class="col-md-4 portfolio-block">
+            <div class="grid mask">
+              <figure>
+                <img class="img-responsive img-portfolio" src="img/sponge-shot2.png" alt="">
+                <figcaption>
+                  <h5>Web Game and Design - JavaScript &amp jQuery</h5>
+                  <a data-toggle="modal" href=" {{{ action('HomeController@showWhack') }}}" class="btn btn-primary btn-lg btn-portfolio">Play Game!</a>
+                </figcaption><!-- /figcaption -->
+              </figure><!-- /figure -->
+            </div><!-- /grid-mask -->
+        </div><!-- /col -->
+        
+        
+             <!-- MODAL SHOW THE PORTFOLIO IMAGE. In this demo, all links point to this modal. You should create
+                  a modal for each of your projects. -->
+                  
+              <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      <h4 class="modal-title">Whack A SpongeBob</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p><img class="img-responsive" src="img/sponge-shot2.png" alt=""></p>
+                      <p>This project is a web application game based on Spongebob Squarepants. &nbsp It was built using JavaScript and jQuery. </p>
+                      <p><b><a class="modal-link" href=" {{{ action('HomeController@showWhack') }}} ">Visit Site</a></b></p>
+                    </div>
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+
+        <!-- PORTFOLIO IMAGE 4 -->
+        <div class="col-md-4 portfolio-block">
+            <div class="grid mask">
+              <figure>
+                <img class="img-responsive img-portfolio" src="img/parks-shot2.png" alt="">
+                <figcaption>
+                  <h5>Web Application and Design - PHP &amp MySQL</h5>
+                  <a data-toggle="modal" href="#myModal4" class="btn btn-primary btn-lg btn-portfolio">Take a Look</a>
+                </figcaption><!-- /figcaption -->
+              </figure><!-- /figure -->
+            </div><!-- /grid-mask -->
+        </div><!-- /col -->
+        
+        
+             <!-- MODAL SHOW THE PORTFOLIO IMAGE. In this demo, all links point to this modal. You should create
+                  a modal for each of your projects. -->
+                  
+              <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      <h4 class="modal-title">US National Parks</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p><img class="img-responsive" src="img/parks-shot2.png" alt=""></p>
+                      <p>This project is a basic web application using PHP and MySQL. &nbsp All the data is stored in a MySQL database and is used to populate one main table.&nbsp Stay tuned for updates! </p>
+                      <!-- <p><b><a class="modal-link" href="http://codeup.dev/national-parks.php">Visit Site</a></b></p> -->
+                    </div>
+                    <!-- <div class="modal-footer">
+                      <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Close</button>
+                    </div> -->
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+
+        <!-- PORTFOLIO IMAGE 5 -->
+        <div class="col-md-4">
+            <div class="grid mask">
+            <figure>
+              <img class="img-responsive" src="img/addy-shot2.png" alt="">
+              <figcaption>
+                <h5>Web Application and Design - PHP</h5>
+                <a data-toggle="modal" href="#myModal5" class="btn btn-primary btn-lg btn-portfolio">Take a Look</a>
+              </figcaption><!-- /figcaption -->
+            </figure><!-- /figure -->
+            </div><!-- /grid-mask -->
+        </div><!-- /col -->
+
+         <!-- MODAL SHOW THE PORTFOLIO IMAGE. In this demo, all links point to this modal. You should create
+                  a modal for each of your projects. -->
+                
+              <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      <h4 class="modal-title">Address Book App</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p><img class="img-responsive" src="img/addy-shot2.png" alt=""></p>
+                      <p>This project is a basic address book web application created using PHP.&nbsp Currently updating app to use the MEAN stack.&nbsp Stay Tuned! </p>
+                      <!-- <p><b><a href="http://codeup.dev/landing-page/addy.php#">Visit Site</a></b></p> -->
+                    </div>
+                    <!-- <div class="modal-footer">
+                      <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Close</button>
+                    </div> -->
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+
+                </div>
+            </div>
+        
+    </section><!-- portfolio ends -->
+
+
+
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="list-inline">
+                    <li><a class="footer-link" href="{{{ action('HomeController@showWelcome')}}}">Home</a>
+                    </li>
+                    <li class="footer-menu-divider">&sdot;</li>
+                    <li><a class="footer-link" href="#page-profile">Profile</a>
+                    </li>
+                    <li class="footer-menu-divider">&sdot;</li>
+                    <li><a class="footer-link" href="#page-resume">Resume</a>
+                    </li>
+                    <li class="footer-menu-divider">&sdot;</li>
+                    <li><a class="footer-link" href="#page-portfolio">Portfolio</a>
+                    </li>
+                    <li class="footer-menu-divider">&sdot;</li>
+                    <li><a class="footer-link" href="{{{ action('PostsController@index') }}}">Blog</a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted small footer-link">Copyright &nbsp&copy; <a href="mailto:orlandovillasenor@me.com"> &nbspOrlando Villaseñor </a>  &nbsp2014</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+      <!-- JAVASCRIPT -->
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.nav.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/jquery.easypiechart.min.js"></script>
+        <script src="js/jquery.vegas.min.js"></script>
+        <script src="js/jquery.isotope.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/jquery.validate.js"></script>
+        <script src="js/waypoints.min.js"></script>
+        <script src="js/index.js"></script>
+
+    </body>
+</html>

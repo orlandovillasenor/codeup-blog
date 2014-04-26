@@ -17,7 +17,12 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		return View::make('hello');
+		return View::make('welcome');
+	}
+
+	public function showWhack()
+	{
+		return View::make('whack');
 	}
 
 	public function showResume()
@@ -27,7 +32,7 @@ class HomeController extends BaseController {
 
 	public function showPortfolio()
 	{
-		return View::make('portfolio');
+		return View::make('welcome');
 	}
 
 	public function showContact()
@@ -60,11 +65,6 @@ class HomeController extends BaseController {
 		    Session::flash('errorMessage', 'Login Unsuccessful - Please try again');
 		    return Redirect::back()->withInput();
 		}
-	}
-
-	public function showBlog()
-	{
-		return View::make('blog');
 	}
 
 }

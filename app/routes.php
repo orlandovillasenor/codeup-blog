@@ -12,13 +12,7 @@
 */
 Route::get('/', 'HomeController@showWelcome');
 
-Route::get('/blog', 'HomeController@showBlog');
-
-Route::get('/resume', 'HomeController@showResume');
-
-Route::get('/portfolio', 'HomeController@showPortfolio');
-
-Route::get('/contact', 'HomeController@showContact');
+Route::get('/whack', 'HomeController@showWhack');
 
 Route::get('/login', 'HomeController@showLogin');
 

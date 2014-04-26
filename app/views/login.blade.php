@@ -27,7 +27,5 @@
 	</div>
 </div>
 @stop
-
-
-	
-
+@section('footer')
+@stop

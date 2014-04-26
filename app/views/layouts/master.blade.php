@@ -49,7 +49,7 @@
 </head>
 
 <body>
-
+@section('navbar')
    <!-- NAVBAR -->
   <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -63,18 +63,16 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav" id="main-menu">
-          <li><a href="{{{ action('PostsController@index')}}}">Blog</a></li>
-          <li><a href="{{{ action('HomeController@showResume')}}}">Resume</a></li>
-          <!-- <li><a href="#page-skills">Skills</a></li>
-          <li><a href="#page-education">Education</a></li>
-          <li><a href="#page-experience">Experience</a></li> -->
-          <li><a href="{{{ action('HomeController@showPortfolio')}}}">Portfolio</a></li>
-          <li><a href="{{{ action('HomeController@showContact')}}}">Contact</a></li>
+          <li><a href="{{{ action('HomeController@showWelcome') }}}">Home</a></li>
+          <li><a href="/#page-profile">Profile</a></li>
+          <li><a href="/#page-resume">Resume</a></li>
+          <li><a href="/#page-portfolio">Portfolio</a></li>
+          <li><a href="{{{ action('PostsController@index') }}}">Blog</a></li>
           
           @if (Auth::check())
-          <li><a href="{{{ action('HomeController@logout')}}}">Logout ({{{ Auth::user()->email }}}) </a></li>  
+          <li><a href="{{{ action('HomeController@logout') }}}">Logout ({{{ Auth::user()->email }}}) </a></li>  
           @else 
-          <li><a href="{{{ action('HomeController@showLogin')}}}">Login</a></li>
+          <li><a href="{{{ action('HomeController@showLogin') }}}">Login</a></li>
           @endif
 
         </ul>
@@ -89,33 +87,36 @@
     <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
 @endif
 
+@show
+
 @yield('content')
 
-<hr>
-
 @section('footer')
-    <footer id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="list-inline">
-                        <li><a class="footer-link" href="{{{ action('PostsController@index')}}}">Blog</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li><a class="footer-link" href="{{{ action('HomeController@showResume')}}}">Resume</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li><a class="footer-link" href="{{{ action('HomeController@showPortfolio')}}}">Portfolio</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li><a class="footer-link" href="{{{ action('HomeController@showContact')}}}">Contact</a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted small">Copyright &copy; <a href="http://codeup.dev/my-site/index.html">Orlando Villaseñor</a>  2014</p>
-                </div>
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="list-inline">
+                    <li><a class="footer-link" href="{{{ action('HomeController@showWelcome')}}}">Home</a>
+                    </li>
+                    <li class="footer-menu-divider">&sdot;</li>
+                    <li><a class="footer-link" href="/#page-profile">Profile</a>
+                    </li>
+                    <li class="footer-menu-divider">&sdot;</li>
+                    <li><a class="footer-link" href="/#page-resume">Resume</a>
+                    </li>
+                    <li class="footer-menu-divider">&sdot;</li>
+                    <li><a class="footer-link" href="/#page-portfolio">Portfolio</a>
+                    </li>
+                    <li class="footer-menu-divider">&sdot;</li>
+                    <li><a class="footer-link" href="{{{ action('PostsController@index') }}}">Blog</a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted small">Copyright &nbsp&copy; <a href="mailto:orlandovillasenor@me.com"> &nbspOrlando Villaseñor </a>  &nbsp2014</p>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 @show
 
 @section('bottomscripts')
@@ -125,7 +126,6 @@
 
     <script src="/js/jquery-1.10.2.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.scrollTo.js"></script>
     <script src="/js/jquery.nav.js"></script>
     <script src="/js/jquery.tagsinput.js"></script>
     <script src="/js/jquery.easypiechart.min.js"></script>

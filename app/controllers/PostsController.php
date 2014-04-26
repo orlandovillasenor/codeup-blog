@@ -75,12 +75,12 @@ class PostsController extends \BaseController {
 		    }
 		    else
 		    {
-		    	
+		    	$clean_body = Purifier::clean(Input::get('body'));
 		        // validation succeeded, create and save the post
 		        $post = new Post();
 		        $post->user_id = Auth::user()->id;		
 				$post->title = Input::get('title');
-				$post->body = Input::get('body');
+				$post->body = $clean_body;
 				$post->image_path = $filename;
 				$post->save();
 				Session::flash('successMessage', 'Post Created Successfully');
@@ -99,7 +99,7 @@ class PostsController extends \BaseController {
 		
 		$post = Post::findOrFail($id);
 		$post->body = Markdown::parse($post->body);
-		Purifier::clean($post->body);
+		
 		return View::make('posts.show')->with('posts', $post);
 	}
 

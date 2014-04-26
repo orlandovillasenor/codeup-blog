@@ -19,8 +19,8 @@
 	                @endif
 	                
 	                <hr>
-	                <div class="well">
-	                	<p id="blog-body">{{ $posts->body }}</p>
+	                <div class="well well-light">
+	                	<p class="blog-body">{{ $posts->body }}</p>
 	                </div>
 	               	<button href="#" id="btnDeletePost" class="btn btn-default">Delete</button>&nbsp &nbsp
 					<a class="btn btn-default" href=" {{{ action('PostsController@edit', $posts->id)}}} ">Edit </a>&nbsp &nbsp
@@ -91,20 +91,22 @@
 	            <div id="right-sidebar" class="col-lg-4">
 	                <div class="well well-dark">
 	                    <h4>Blog Search</h4>
-	                    <div class="input-group">
-	                    	{{ Form::open(array('action' => array('PostsController@index'), 'method' => 'get')) }}
+	                    <div class="form-group">
+	                    	{{ Form::open(array('action' => 'PostsController@index')) }}
 	                        {{ Form::text('search', null, array('class' => 'form-control'))}}
-	                        <span class="input-group-btn">
-	                            <button class="btn search" type="submit">
+
+	                        <!-- <span class="input-group-btn"> -->
+	                        {{Form::submit('Submit', array('class' => 'btn btn-default search'))}}
+	                            <!-- <button class="btn search" type="submit">
 	                                <span class="glyphicon glyphicon-search"></span>
-	                            </button>
+	                            </button> -->
 	                        {{ Form::close() }}
-	                        </span>
+	                        <!-- </span> -->
 	                    </div>
 	                    <!-- /input-group -->
 	                </div>
 	                <!-- /well -->
-	                <div class="well well-dark">
+	                <!-- <div class="well well-dark">
 	                    <h4>Popular Blog Categories</h4>
 	                    <div class="row">
 	                        <div class="col-lg-6">
@@ -132,29 +134,22 @@
 	                            </ul>
 	                        </div>
 	                    </div>
-	                </div>
+	                </div> -->
+	                
 	                <!-- /well -->
-	                <div class="well well-dark">
-	                    <h4>Side Widget Well</h4>
-	                    <p>Bootstrap's default wells work great for side widgets! What is a widget anyways...?</p>
-	                </div>
+	                <!-- <div class="well well-dark"> -->
+	                <!-- Twitter API-->
+	                    <a class="twitter-timeline" href="https://twitter.com/ododoubleg" data-widget-id="459200226574622720">Tweets by @ododoubleg</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+	                <!-- </div> -->
 	                <!-- /well -->
 	            </div>
 	        </div>
 
-	        <!-- <hr>
-
-	        <footer>
-	            <div class="row">
-	                <div class="col-lg-12">
-	                    <p>Copyright &copy; Orlando Villaseñor 2014</p>
-	                </div>
-	            </div>
-	        </footer> -->
-
 	    </div>
     <!-- /.container -->
-
+		<hr>
            <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'orlandovillasenor'; // required: replace example with your forum shortname

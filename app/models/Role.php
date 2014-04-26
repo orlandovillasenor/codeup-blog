@@ -9,7 +9,7 @@ class Role extends BaseModel {
     * Rules for post validation
     */
     public static $rules = array(
-    'role'      => 'required|max:100',
+    'role'      => 'required|max:10',
 );
 
 public function user()
