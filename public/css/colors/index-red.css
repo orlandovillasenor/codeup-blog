@@ -1,7 +1,7 @@
 /* red - #e74c3c */
 
 
-a:link,a:visited,.navbar-default .navbar-nav>li>a:hover, 
+.navbar-default .navbar-nav>li>a:hover, 
 .navbar-default .navbar-nav>li>a:focus,a:hover,a:active,.navbar-default .navbar-nav>.active>a, 
 .navbar-default .navbar-nav>.active>a:hover, 
 .navbar-default .navbar-nav>.active>a:focus{
@@ -36,6 +36,31 @@ a.modal-link:link, a.modal-link:visited {
   color: #D3492C;
 }
 
-.footer-link>a:link,a:visited {
+a.footer-link:link, a.footer-link:visited {
 	color: #FFF;
 }
+
+a.footer-link:hover {
+	color: #D3492C;
+}
+
+a.mail-link:link, a.mail-link:visited {
+	color: #D3492C;
+}
+
+a.resume-link:link, a.resume-link:visited {
+	color: #FFF;
+}
+
+a.resume-link:hover {
+	color: #D3492C;
+}
+
+a.btn-portfolio:link, a.btn-portfolio:visited {
+	color: #FFF;
+}
+
+a.btn-portfolio:hover {
+	color: #D3492C;
+}
+

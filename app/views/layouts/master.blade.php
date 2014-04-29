@@ -112,7 +112,7 @@
                     <li><a class="footer-link" href="{{{ action('PostsController@index') }}}">Blog</a>
                     </li>
                 </ul>
-                <p class="copyright text-muted small">Copyright &nbsp&copy; <a href="mailto:orlandovillasenor@me.com"> &nbspOrlando Villaseñor </a>  &nbsp2014</p>
+                <p class="copyright text-muted small">Copyright &nbsp&copy; <a class="footer-link" href="mailto:orlandovillasenor@me.com"> &nbspOrlando Villaseñor </a>  &nbsp2014</p>
             </div>
         </div>
     </div>

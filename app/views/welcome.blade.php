@@ -146,7 +146,7 @@
           <div class="col-md-7">
             <address>
               <p class="text-left">Email: &nbsp 
-                <a href="mailto:orlandovillasenor@me.com">orlandovillasenor@me.com</a>
+                <a class="mail-link" href="mailto:orlandovillasenor@me.com">orlandovillasenor@me.com</a>
               </p>
               <p class="text-left">Phone: &nbsp
                 <i class="fa fa-phone" style="color: #FFF">&nbsp (210) 913-1556</i> 
@@ -154,9 +154,9 @@
             </address>
           </div>
           <div class="col-md-2">
-            <p class="text-left"> <a href="http://linkedin.com/in/orlandovillasenor/" target="_blank"> <i class="fa fa-linkedin-square fa-lg"></i> Linkedin</a></p>
+            <p class="text-left"> <a class="resume-link" href="http://linkedin.com/in/orlandovillasenor/" target="_blank"> <i class="fa fa-linkedin-square fa-lg"></i> Linkedin</a></p>
             <p>
-              <a href="http://github.com/orlandovillasenor" target="_blank"> <i class="fa fa-github fa-lg"></i> GitHub</a> </p>
+              <a class="resume-link" href="http://github.com/orlandovillasenor" target="_blank"> <i class="fa fa-github fa-lg"></i> GitHub</a> </p>
           </div>
         </div>
         
@@ -270,7 +270,7 @@
           
       
         <!-- PORTFOLIO IMAGE 1 -->
-        <div class="col-md-4 ">
+        <div class="col-md-4">
             <div class="grid mask">
             <figure>
               <img class="img-responsive" src="img/todo-shot2.png" alt="">
@@ -472,7 +472,7 @@
                     <li><a class="footer-link" href="{{{ action('PostsController@index') }}}">Blog</a>
                     </li>
                 </ul>
-                <p class="copyright text-muted small footer-link">Copyright &nbsp&copy; <a href="mailto:orlandovillasenor@me.com"> &nbspOrlando Villaseñor </a>  &nbsp2014</p>
+                <p class="copyright text-muted small footer-link">Copyright &nbsp&copy; <a class="footer-link" href="mailto:orlandovillasenor@me.com"> &nbspOrlando Villaseñor </a>  &nbsp2014</p>
             </div>
         </div>
     </div>
