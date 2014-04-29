@@ -12,18 +12,18 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <!-- BOOTSTRAP CORE CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
         <!-- Fonts from Font Awsome -->
-        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
          <!-- Magnific popup -->
-        <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="/css/magnific-popup.css">
         <!-- Custom styles for this template -->
-        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="/css/index.css">
 
         <!-- Color styles -->
         <!-- <link rel="stylesheet" href="css/colors/blue.css"> -->
        <!-- <link rel="stylesheet" href="css/colors/yellow.css">-->
-        <link rel="stylesheet" href="css/colors/index-red.css">
+        <link rel="stylesheet" href="/css/colors/index-red.css">
        <!--  <link rel="stylesheet" href="css/colors/purple.css">-->
        <!--  <link rel="stylesheet" href="css/colors/orange.css">-->
        <!--  <link rel="stylesheet" href="css/colors/green.css">-->
