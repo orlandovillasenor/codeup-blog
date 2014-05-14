@@ -87,14 +87,15 @@
                     <p>WEB DEVELOPER</p>
                 </header>
                 <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/orlandovillasenor" class="btn btn-round btn-clear btn-linkedin" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                        <a href="https://www.github.com/orlandovillasenor" class="btn btn-round btn-clear btn-github" target="_blank"><i class="fa fa-github"></i></a>
                         <a href="https://twitter.com/ododoubleg" target="_blank" class="btn btn-round btn-clear btn-twitter"><i class="fa fa-twitter"></i></a>
                         <a href="https://www.facebook.com/orlando.villasenor.7" target="_blank" class="btn btn-round btn-clear btn-facebook"><i class="fa fa-facebook"></i></a>
                         <!-- <a href="https://www.dribbble.com/" class="btn btn-round btn-clear btn-dribbble"><i class="fa fa-dribbble"></i></a> -->
                         <!-- <a href="https://www.instagram.com/" class="btn btn-round btn-clear btn-instagram"><i class="fa fa-instagram"></i></a> -->
-                        <a href="https://www.linkedin.com/in/orlandovillasenor" class="btn btn-round btn-clear btn-linkedin" target="_blank"><i class="fa fa-linkedin-square"></i></a>
                          <!-- <a href="https://www.pinterest.com/" class="btn btn-round btn-clear btn-pinterest"><i class="fa fa-pinterest"></i></a> -->
                         <!-- <a href="https://www.google.com/" class="btn btn-round btn-clear btn-google"><i class="fa fa-google-plus"></i></a> -->
-                        <a href="https://www.github.com/orlandovillasenor" class="btn btn-round btn-clear btn-github" target="_blank"><i class="fa fa-github"></i></a>
+                        
                     
                 </div>
                 <a href="mailto:orlandovillasenor@me.com" class="btn btn-default hire-me">Email</a>
@@ -170,7 +171,7 @@
               <div class="well resume-well">
                 <ul>
                   <li>Proficient with the LAMP stack: Linux, Apache, MySQL, PHP, JavaScript, HTML and CSS. </li>
-                  <li>Knowledge of different frameworks such as Laravel, jQuery, and Twitter Bootstrap.</li>
+                  <li>Experience with different frameworks such as Laravel, jQuery, AngularJS, and Twitter Bootstrap.</li>
                   <li>A former small business owner who understands the importance of exceptional customer service, creative marketing strategies, and efficient financial management in order to maintain a successful business.
                   </li>
                   <li>Experience as a business manager for a successful startup which included sole responsibility for all financials such as bookkeeping, payroll, taxes and accounting statements.</li>
@@ -191,11 +192,12 @@
                   <ul>
                     <li>Design and build web applications that provide a great user experience using the LAMP stack: Linux, Apache, MySQL, PHP, Javascript, HTML5, and CSS3.</li>
                     <li>Part of a team that created and built an online web application system for military dependent student-athletes who are stationed overseas. The application allows high school student athletes and college coaches to connect for recruiting purposes. The athletes create a profile on the site which allows them to input their stats along with highlight videos and photos. The application was built using the LAMP stack: PHP, Laravel, Javascript, jQuery, HTML5, CSS3, MySQL, Apache, Vagrant, and Github.</li>
-                    <li>Created a blog application that allows multiple users to sign in and start blogging within their own user accounts. Includes admin profile with the ability to create, update and remove user’s blog posts. The application was built using the LAMP stack: PHP, Laravel, Javascript, jQuery, HTML5, CSS3, MySQL, Apache, Vagrant, and Github.</li>
-                    <li>Created a web application that allows users to create a to-do list with the ability to add and delete items from the database. The application was built using the LAMP stack: PHP, Javascript, jQuery, HTML5, CSS3, MySQL, Apache, and Vagrant.</li>
+                    <li>Designed and coded a personal website and blog application that includes an admin profile with the ability to sign in, create, update and remove blog posts. The application was built using the LAMP stack: PHP, Laravel, Javascript, jQuery, HTML5, CSS3, MySQL, Apache, Vagrant, and Github.</li>
+                    <li>Created a Spongebob Squarepants internet game that is based on whack-a-mole.  The game features the ability to keep score, maintain a high-score using local storage, and also includes theme music and sound effects.  This game was built using JavaScript, jQuery, HTML5, and CSS3.</li>
+                    <li>Created a web application that allows users to create a to-do list with the ability to add and delete items from a MySQL database. The application was built using the LAMP stack: PHP, Javascript, jQuery, HTML5, CSS3, MySQL, Apache, and Vagrant.</li>
                     
                   </ul>
-                  <p><strong>Everlong Recording Company &nbsp | &nbsp 2000 - Present</strong><br><em>Owner - Recording/Mix Engineer</em></p>
+                  <p><strong>Everlong Recording Company &nbsp | &nbsp 1999 - 2013</strong><br><em>Owner - Recording/Mix Engineer</em></p>
                   <ul>
                     <li>Established independent music recording business as a freelance recording engineer and progressed business to a commercial recording studio and independent record label. </li>
                     <li>Handled all aspects of the business as a sole proprietor including all marketing, bookings, accounting, and hiring.</li>
